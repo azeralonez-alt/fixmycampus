@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SiLapor Kampus</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 350px; }
+        h2 { text-align: center; color: #333; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #666; font-size: 14px; }
+        input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; background: #007bff; color: white; border: none; padding: 10px; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .error-msg { color: red; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
+        .info-akun { margin-top: 20px; background: #e9ecef; padding: 10px; border-radius: 4px; font-size: 12px; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>SiLapor Kampus</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required placeholder="Masukkan username...">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Masukkan password...">
+            </div>
+            <button type="submit">Masuk</button>
+            <div id="errorMsg" class="error-msg">Username atau Password salah!</div>
+        </form>
+
+        <div class="info-akun">
+            <strong>Akun Percobaan (Demo):</strong><br>
+            - Mahasiswa: <code>mhs</code> / <code>123</code><br>
+            - Admin: <code>admin</code> / <code>123</code>
+        </div>
+    </div>
+
+    <!-- Panggil Database dulu, baru Script Login -->
+    <script src="config/database.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
