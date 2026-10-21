@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pengaduan - SiLapor Kampus</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f6f9; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 420px; 
+        }
+        h2 { 
+            text-align: center; 
+            color: #333; 
+            margin-bottom: 20px; 
+        }
+        .form-group { 
+            margin-bottom: 15px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 5px; 
+            color: #666; 
+            font-size: 14px; 
+        }
+        input, select, textarea { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            font-family: inherit;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button { 
+            width: 100%; 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 10px; 
+            border-radius: 4px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-top: 10px;
+        }
+        button:hover { 
+            background: #0056b3; 
+        }
+        .success-msg {
+            color: green;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-card">
+        <h2>Form Pengaduan</h2>
+        <form id="formPengaduan">
+            <div class="form-group">
+                <label for="namaPelapor">Nama Pelapor</label>
+                <input type="text" id="namaPelapor" required placeholder="Nama pelapor...">
+            </div>
+            
+            <div class="form-group">
+                <label for="lokasi">Lokasi / Gedung</label>
+                <input type="text" id="lokasi" required placeholder="Contoh: GKB - Ruang 4.8">
+            </div>
+
+            <div class="form-group">
+                <label for="kategori">Kategori Fasilitas</label>
+                <select id="kategori" required>
+                    <option value="" disabled selected>Pilih Kategori...</option>
+                    <option value="AC / Pendingin">AC / Pendingin</option>
+                    <option value="Proyektor">Proyektor</option>
+                    <option value="Komputer / Jaringan">Komputer / Jaringan</option>
+                    <option value="Meja / Kursi">Meja / Kursi</option>
+                    <option value="Sanitasi / Toilet">Sanitasi / Toilet</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi Kerusakan</label>
+                <textarea id="deskripsi" rows="4" required placeholder="Jelaskan detail kerusakannya..."></textarea>
+            </div>
+
+            <button type="submit">Kirim Laporan</button>
+            <div id="successMsg" class="success-msg">Laporan berhasil dikirim!</div>
+        </form>
+    </div>
+
+    <!-- Wajib panggil database.js dulu -->
+    <script src="config/database.js"></script>
+    <script src="form-js.js"></script>
+</body>
+</html>
