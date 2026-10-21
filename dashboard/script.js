@@ -100,7 +100,7 @@ function ubahStatus(id, statusBaru) {
 }
 
 function hapusAduan(id) {
-    if (!confirm("Yakin mau hapus pengaduan?")) {
+    if (!confirm("Yakin mau hapus pengaduan ini?")) {
         return;
     }
     var data = ambilData();
