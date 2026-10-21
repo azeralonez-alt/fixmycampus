@@ -12,7 +12,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     if (statusLogin) {
         // Jika Berhasil, pindah ke halaman utama (index.html)
-        window.location.href = "form_pengaduan.html";
+        window.location.href = "form-pengaduan.html";
     } else {
         // Jika Gagal, tampilkan pesan error
         errorMsg.style.display = "block";
